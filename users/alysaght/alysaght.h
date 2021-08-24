@@ -158,12 +158,16 @@ enum custom_keycodes {
  * `----------------------------------'        `----------------------------------'
  */
 #define _________________COLEMAK_L1________________       KC_Q,    KC_W,    KC_F,    KC_P,    KC_B
-#define _________________COLEMAK_L2________________       HOMK_A,  HOMK_R,  HOMK_S,  HOMK_T,  KC_G
+#define _________________COLEMAK_L2________________       KC_A,    KC_R,    KC_S,    KC_T,    KC_G
+#define _________________COLEMAK_ML2________________      HOMK_A,  HOMK_R,  HOMK_S,  HOMK_T,  KC_G
 #define _________________COLEMAK_L3________________       KC_Z,    KC_X,    KC_C,    KC_D,    KC_V
+#define _________________COLEMAK_ML3________________      LSFT_T(KC_Z), LCTL_T(KC_X), LALT_T(KC_C), LGUI_T(KC_D), KC_V
 
 #define _________________COLEMAK_R1________________       KC_J,    KC_L,    KC_U,    KC_Y,    KC_QUOT
-#define _________________COLEMAK_R2________________       KC_M,    HOMK_N,  HOMK_E,  HOMK_I,  HOMK_O
+#define _________________COLEMAK_R2________________       KC_M,    KC_N,    KC_E,    KC_I,    KC_O
+#define _________________COLEMAK_MR2________________      KC_M,    HOMK_N,  HOMK_E,  HOMK_I,  HOMK_O
 #define _________________COLEMAK_R3________________       KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH
+#define _________________COLEMAK_MR3________________      KC_K, LGUI_T(KC_H), LALT_T(KC_COMM), LCTL_T(KC_DOT), LSFT_T(KC_SLSH)
 
 
 
@@ -184,13 +188,13 @@ enum custom_keycodes {
 
 #define _________________FFXIV_L0__________________        KC_ESC,  KC_GRV,  KC_TAB,  KC_1,    LT(_ADJUST, KC_2)
 #define _________________FFXIV_L1__________________        _________________COLEMAK_L1________________
-#define _________________FFXIV_L2__________________        KC_A,    KC_R,    KC_S,    KC_T,    KC_G
+#define _________________FFXIV_L2__________________        _________________COLEMAK_L2________________
 #define _________________FFXIV_L3__________________        _________________COLEMAK_L3________________
 #define _________________FFXIV_LT__________________        XXXXXXX, XXXXXXX, KC_LALT, KC_LSFT, KC_LGUI
 
 #define _________________FFXIV_R0__________________        KC_6,    KC_7,   KC_8,    KC_9,    KC_0
 #define _________________FFXIV_R1__________________        _________________COLEMAK_R1________________
-#define _________________FFXIV_R2__________________        KC_M,    KC_N,    KC_E,    KC_I,    KC_O
+#define _________________FFXIV_R2__________________        _________________COLEMAK_R2________________
 #define _________________FFXIV_R3__________________        _________________COLEMAK_R3________________
 #define _________________FFXIV_RT__________________        KC_ENT,  KC_SPC, KC_BSPC,  XXXXXXX, XXXXXXX
 
@@ -206,8 +210,8 @@ enum custom_keycodes {
  * |  NO  |  NO  |  NO  |  NO  |  NO  |        |  NO  |  NO  |  NO  |  NO  |  NO  |
  * `----------------------------------'        `----------------------------------'
  */
-#define _________________MOD_L2____________________         KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, XXXXXXX
-#define _________________MOD_R2____________________         XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT
+#define _________________MOD_L_____________________         KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, XXXXXXX
+#define _________________MOD_R_____________________         XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT
 
 #define _________________BLANK_5___________________         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 
@@ -229,8 +233,8 @@ enum custom_keycodes {
 #define _________________NSL_LT____________________         XXXXXXX, XXXXXXX, KC_DOT,  KC_COLN, KC_GRV
 
 #define _________________NSL_R1____________________         _________________BLANK_5___________________
-#define _________________NSL_R2____________________         _________________MOD_R2____________________
-#define _________________NSL_R3____________________         _________________BLANK_5___________________
+#define _________________NSL_R2____________________         _________________BLANK_5___________________
+#define _________________NSL_R3____________________         _________________MOD_R_____________________
 #define _________________NSL_RT____________________         XXXXXXX, _______, XXXXXXX, XXXXXXX, XXXXXXX
 
 /* Shifted Number/Symbol layer
@@ -251,8 +255,8 @@ enum custom_keycodes {
 #define _________________NSSL_LT___________________         XXXXXXX, XXXXXXX, KC_DOT,  KC_SCLN, KC_TILD
 
 #define _________________NSSL_R1___________________         _________________BLANK_5___________________
-#define _________________NSSL_R2___________________         _________________MOD_R2____________________
-#define _________________NSSL_R3___________________         _________________BLANK_5___________________
+#define _________________NSSL_R2___________________         _________________BLANK_5___________________
+#define _________________NSSL_R3___________________         _________________MOD_R_____________________ns
 #define _________________NSSL_RT___________________         _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 
 /* Fn layer
@@ -290,8 +294,8 @@ enum custom_keycodes {
 */
 
 #define _________________NAV_L1____________________         _________________BLANK_5___________________
-#define _________________NAV_L2____________________         _________________MOD_L2____________________
-#define _________________NAV_L3____________________         UNDO,    CUT,     COPY,    PASTE,   PASTE
+#define _________________NAV_L2____________________         _________________BLANK_5___________________
+#define _________________NAV_L3____________________         _________________MOD_R_____________________
 #define _________________NAV_LT____________________         XXXXXXX, XXXXXXX, XXXXXXX, _______, XXXXXXX
 
 #define _________________NAV_R1____________________         XXXXXXX, NX_HOME, NX_WB,   NX_WF,   NX_END
@@ -312,8 +316,8 @@ enum custom_keycodes {
 */
 
 #define _________________MOUSE_L1__________________         _________________BLANK_5___________________
-#define _________________MOUSE_L2__________________         _________________MOD_L2____________________
-#define _________________MOUSE_L3__________________         _________________BLANK_5___________________
+#define _________________MOUSE_L2__________________         _________________BLANK_5___________________
+#define _________________MOUSE_L3__________________         _________________MOD_R_____________________
 #define _________________MOUSE_LT__________________         XXXXXXX, XXXXXXX, MO(_ADJUST), XXXXXXX, _______
 
 #define _________________MOUSE_R1__________________         _________________BLANK_5___________________
@@ -334,8 +338,8 @@ enum custom_keycodes {
 */
 
 #define _________________MEDIA_L1__________________         _________________BLANK_5___________________
-#define _________________MEDIA_L2__________________         _________________MOD_L2____________________
-#define _________________MEDIA_L3__________________         _________________BLANK_5___________________
+#define _________________MEDIA_L2__________________         _________________BLANK_5___________________
+#define _________________MEDIA_L3__________________         _________________MOD_L_____________________
 #define _________________MEDIA_LT__________________         XXXXXXX, XXXXXXX, _______, XXXXXXX, MO(_ADJUST)
 
 #define _________________MEDIA_R1__________________         RGB_TOG, RGB_MOD, RGB_HUI, RGB_SAI, RGB_VAI
