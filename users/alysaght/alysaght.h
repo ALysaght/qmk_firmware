@@ -210,6 +210,7 @@ enum custom_keycodes {
 #define _________________MOD_R2____________________         XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT
 
 #define _________________BLANK_5___________________         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+#define _____________BLANK_4______________         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 
 /* Number/Symbol layer
 * ,----------------------------------.        ,----------------------------------.
@@ -219,7 +220,7 @@ enum custom_keycodes {
 * |------+------+------+------+------+        +------+------+------+------+------|
 * |  1   |  2   |  3   |  _   |  +   |        |  NO  |  NO  |  NO  |  NO  |  NO  |
 * |------+------+------+------+------+        +------+------+------+------+------|
-* |  NO  |  NO  |  .   |  :   |  `   |        |  NO  |  NO  |  NO  |  NO  |  NO  |
+* |  NO  |  NO  |  .   |  :   |  `   |        |  NO  |  NO  |  NO  |  NO  |  Spc |
 * `----------------------------------'        `----------------------------------'
 */
 
@@ -230,7 +231,7 @@ enum custom_keycodes {
 
 #define _________________NSL_R1____________________         _________________BLANK_5___________________
 #define _________________NSL_R2____________________         _________________MOD_R2____________________
-#define _________________NSL_R3____________________         _________________BLANK_5___________________
+#define _________________NSL_R3____________________         _____________BLANK_4______________, KC_SPC
 #define _________________NSL_RT____________________         XXXXXXX, _______, XXXXXXX, XXXXXXX, XXXXXXX
 
 /* Shifted Number/Symbol layer
@@ -252,16 +253,16 @@ enum custom_keycodes {
 
 #define _________________NSSL_R1___________________         _________________BLANK_5___________________
 #define _________________NSSL_R2___________________         _________________MOD_R2____________________
-#define _________________NSSL_R3___________________         _________________BLANK_5___________________
+#define _________________NSSL_R3___________________         _____________BLANK_4______________, KC_ENT
 #define _________________NSSL_RT___________________         _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 
 /* Fn layer
 * ,----------------------------------.        ,----------------------------------.
-* |GITFET|GITPUL|  NO  |GITREB|  NO  |        |  NO  |  F9  | F10  | F11  | F12  |
+* |GITFET|GITPUL|  NO  |GITREB|  NO  |        |  F9  | F10  | F11  | F12  |  NO  |
 * |------+------+------+------+------+        +------+------+------+------+------|
-* |GITADD|GITSTA|GITCOM|GITPUI|GITPUO|        |  NO  |  F5  |  F6  |  F7  |  F8  |
+* |GITADD|GITSTA|GITCOM|GITPUI|GITPUO|        |  F5  |  F6  |  F7  |  F8  |  NO  |
 * |------+------+------+------+------+        +------+------+------+------+------|
-* |GITBDE|GITBRC|GITCOU|GITCOB|GITBRC|        |  NO  |  F1  |  F2  |  F3  |  F4  |
+* |GITBDE|GITBRC|GITCOU|GITCOB|GITBRC|        |  F1  |  F2  |  F3  |  F4  |  Del |
 * |------+------+------+------+------+        +------+------+------+------+------|
 * |  NO  |  NO  |ScrGrb| <-\s |%>%\n |        |  NO  |  NO  |      |  NO  |  NO  |
 * `----------------------------------'        `----------------------------------'
@@ -272,9 +273,9 @@ enum custom_keycodes {
 #define _________________FUNC_L3___________________         GITBDEL, XXXXXXX, GITCOUT, GITCOBR, GITBRCH
 #define _________________FUNC_LT___________________         XXXXXXX, XXXXXXX, SCR_GRB, R_ASIGN, R_PIPE
 
-#define _________________FUNC_R1___________________         XXXXXXX, KC_F9,   KC_F10,  KC_F11,  KC_F12
-#define _________________FUNC_R2___________________         XXXXXXX, KC_F5,   KC_F6,   KC_F7,   KC_F8
-#define _________________FUNC_R3___________________         XXXXXXX, KC_F1,   KC_F2,   KC_F3,   KC_F4
+#define _________________FUNC_R1___________________         KC_F9,   KC_F10,  KC_F11,  KC_F12, XXXXXXX
+#define _________________FUNC_R2___________________         KC_F5,   KC_F6,   KC_F7,   KC_F8,  XXXXXXX
+#define _________________FUNC_R3___________________         KC_F1,   KC_F2,   KC_F3,   KC_F4,  KC_DEL
 #define _________________FUNC_RT___________________         XXXXXXX, XXXXXXX, _______, XXXXXXX, XXXXXXX
 
 /* Navigation layer
@@ -291,7 +292,7 @@ enum custom_keycodes {
 
 #define _________________NAV_L1____________________         _________________BLANK_5___________________
 #define _________________NAV_L2____________________         _________________MOD_L2____________________
-#define _________________NAV_L3____________________         UNDO,    CUT,     COPY,    PASTE,   PASTE
+#define _________________NAV_L3____________________         KC_BSPC, _____________BLANK_4______________
 #define _________________NAV_LT____________________         XXXXXXX, XXXXXXX, XXXXXXX, _______, XXXXXXX
 
 #define _________________NAV_R1____________________         XXXXXXX, NX_HOME, NX_WB,   NX_WF,   NX_END
@@ -313,7 +314,7 @@ enum custom_keycodes {
 
 #define _________________MOUSE_L1__________________         _________________BLANK_5___________________
 #define _________________MOUSE_L2__________________         _________________MOD_L2____________________
-#define _________________MOUSE_L3__________________         _________________BLANK_5___________________
+#define _________________MOUSE_L3__________________         KC_TAB,  _____________BLANK_4______________
 #define _________________MOUSE_LT__________________         XXXXXXX, XXXXXXX, MO(_ADJUST), XXXXXXX, _______
 
 #define _________________MOUSE_R1__________________         _________________BLANK_5___________________
@@ -335,7 +336,7 @@ enum custom_keycodes {
 
 #define _________________MEDIA_L1__________________         _________________BLANK_5___________________
 #define _________________MEDIA_L2__________________         _________________MOD_L2____________________
-#define _________________MEDIA_L3__________________         _________________BLANK_5___________________
+#define _________________MEDIA_L3__________________         KC_ESC,  _____________BLANK_4______________
 #define _________________MEDIA_LT__________________         XXXXXXX, XXXXXXX, _______, XXXXXXX, MO(_ADJUST)
 
 #define _________________MEDIA_R1__________________         RGB_TOG, RGB_MOD, RGB_HUI, RGB_SAI, RGB_VAI
